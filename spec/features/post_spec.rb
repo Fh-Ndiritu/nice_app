@@ -14,5 +14,6 @@ RSpec.describe "Post Features", type: :feature do
     it 'links to new post page' do 
         click_link("New post")
         expect(current_path).to eq('/posts/new')
+        expect(page).to have_content('Add a Post')
     end
 end
