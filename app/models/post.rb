@@ -3,8 +3,11 @@ class Post < ApplicationRecord
     validates :content, presence: true, length: {in: 3..100}
     belongs_to :user
 
+    scope :active, ->{where(active: true)}
 
     def summary
         "#{content[0...20]}..."
     end
+
+    
 end
