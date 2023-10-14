@@ -1,6 +1,7 @@
 class Post < ApplicationRecord
     validates :title, presence: true
-    validates :content, presence: true, length: {in: 3..10}
+    validates :content, presence: true, length: {in: 3..100}
+    belongs_to :user
 
 
     def summary
