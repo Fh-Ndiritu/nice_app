@@ -1,15 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe "posts/edit", type: :view do
-  let(:post) {
-    Post.create!(
-      title: "MyString",
-      content: "MyText"
-    )
-  }
-
+  let(:user){ create(:user)}
+  let(:post){create(:post, user: user, title: 'My Title', content: 'Some Text')}
   before(:each) do
     assign(:post, post)
+    sign_in(user)
   end
 
   it "renders the edit post form" do
