@@ -15,4 +15,7 @@ RSpec.describe "posts/new", type: :view do
       expect(rendered).to have_field("post[content]", type: "textarea")
     end
   end
+
+
+
 end

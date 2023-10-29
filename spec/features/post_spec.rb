@@ -27,4 +27,16 @@ RSpec.describe "Post Features", type: :feature do
         expect(page).to have_content('Post 2')
     end
 
+    it 'adds a post to list of posts' do 
+        click_link('New post')
+        expect(current_path).to have_content('/posts/new')
+
+        fill_in('Title', with: 'Lorem')
+        fill_in('Content', with: 'Some random latin text')
+        click_button('Create')
+        expect(page).to have_content('Lorem')
+        expect(current_path).to have_content('/posts/')
+    
+    end
+
 end
