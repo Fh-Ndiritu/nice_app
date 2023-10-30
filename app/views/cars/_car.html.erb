@@ -1,0 +1,10 @@
+<div id="<%= dom_id car %>">
+  <h3 class="bg-text-400 ">  <%= car.color.capitalize %> model <%= car.brand %> <%= car.car_model %> at <%= car.price %></h3>
+  <%= link_to "Show", car, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+
+  <% if action_name != "show" %>
+    <%= link_to "Edit this car", edit_car_path(car), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>
+
