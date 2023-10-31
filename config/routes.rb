@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
+  get 'rooms/index'
   resources :cars
 
   devise_for :users
+  get 'user/:id', to: 'user#show', as: 'user'
   resources :posts
+  resources :rooms
 
   root to: "cars#index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
