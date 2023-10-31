@@ -1,9 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe 'creating', type: :feature do 
+RSpec.describe 'creating', type: :feature do
+    
     describe 'adding a new electronic' do 
-        visit electronics_path
-        it 'has electronics title' do 
+        it 'has electronics title', focus: do 
+            visit electronics_path
             expect(page).to have_content("Shop for Electronics")
             click_on("New Electronic")
 
@@ -21,14 +22,15 @@ RSpec.describe 'creating', type: :feature do
     end
 
     describe 'showing device cruds ' do 
-        subject = create(:electronic, name: "Macbook M2")
 
         it 'can create a new electronic' do 
+            subject = create(:electronic, name: "Macbook M2")
             visit "/electronis/#{subject.id}"
             expect(page).to have_content(subject.name)
         end
 
         it 'can update electronic' do 
+            subject = create(:electronic, name: "Macbook M2")
             visit electronics_path
             first(:link, "Edit").click
             expect(page).to have_content("Edit Electronic")
@@ -38,6 +40,7 @@ RSpec.describe 'creating', type: :feature do
         end
 
         it 'can be destroyed' do 
+            subject = create(:electronic, name: "Macbook M2")
             visit electronics_path
             first(:link, "Destroy").click
             expect(page).to_not have_content(subject.name)

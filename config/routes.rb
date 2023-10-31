@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'rooms/index'
   resources :cars
+  resources :electronics
 
   devise_for :users
   get 'user/:id', to: 'user#show', as: 'user'

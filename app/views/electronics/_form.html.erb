@@ -1,0 +1,11 @@
+<%= simple_form_for electronic, html: { class: 'electronic form '} do |form| %>
+<% if electronic.errors.any? %>
+    <div class="error-message bg-red-100 text-red-400">
+        <%= electronic.errors.full_messages.to_sentence.capitalize %>
+    </div>
+<% end %>
+
+<%= form.input :name, input_html: { autofocus: true }%>
+<%= form.input :price, input_html: { autofocus: true }%>
+<%= form.submit class: "rounded bg-green-500 px-4 py-2 text-white" %>
+<% end %>

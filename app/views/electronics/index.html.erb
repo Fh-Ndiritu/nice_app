@@ -1,0 +1,8 @@
+<main class="content w-full">
+<div class="header flex justify-between w-full">
+    <h1 class="text-4xl">Shop for Electronics</h1>
+    <%= link_to "New Electronic", new_electronic_path, class: "text-white bg-pink-400 rounded-lg px-6 py-4" %>
+</div>
+
+<%= render @electronics %>
+</main>

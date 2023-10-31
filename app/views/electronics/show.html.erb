@@ -1,0 +1,10 @@
+<%# app/views/quotes/show.html.erb %>
+
+<main class="contents">
+  <%= link_to sanitize("&larr; Back to quotes"), electronics_path %>
+  <div class="header">
+    <h1>
+      <%= @electronic.name %> sold at USD <%= @electronic.price %>
+    </h1>
+  </div>
+</main>
