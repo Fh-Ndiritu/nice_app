@@ -1,5 +1,5 @@
 <div id="<%= dom_id car %>" class="p-3">
-  <h3 class="text-red-400 text-xl ">  <%= car.color.capitalize %> <%= car.brand %> <%= car.car_model %> at <%= car.price %></h3>
+  <h3 class="text-red-400 text-xl ">  <%= car.color&.capitalize %> <%= car.brand %> <%= car.car_model %> at <%= car.price %></h3>
   <%= link_to "Show", car, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
 
 </div>
