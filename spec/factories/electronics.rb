@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :electronic do
     name { "MyString" }
-    price { "MyString" }
+    price { 20 }
   end
 end

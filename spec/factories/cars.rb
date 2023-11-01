@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :car do
-    model { "MyString" }
+    car_model { "MyString" }
     brand { "MyString" }
     power { 1 }
     color { "MyString" }
