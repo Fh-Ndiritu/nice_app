@@ -14,7 +14,7 @@ class ElectronicsController < ApplicationController
         if @electronic.save
             redirect_to electronics_path, notice: "Electronics created!"
         else
-            render :new
+            render :new, status: :unprocessable_entity
         end
     end
 
@@ -26,7 +26,7 @@ class ElectronicsController < ApplicationController
         if @electronic.update(electronic_params)
             redirect_to electronics_path, notice: "Electronics updated!"
         else
-            render :edit
+            render :edit, status: :unprocessable_entity
         end
     end
 
