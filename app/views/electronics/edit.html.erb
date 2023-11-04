@@ -5,5 +5,7 @@
     <h1>Edit Electronic</h1>
   </div>
 
-  <%= render "form", electronic: @electronic %>
+  <%= turbo_frame_tag @electronic do %>
+      <%= render "form", electronic: @electronic %>
+  <% end %>
 </main>
