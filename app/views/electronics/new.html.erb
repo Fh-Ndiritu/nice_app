@@ -1,9 +1,11 @@
 <main class="content w-full">
-<%= link_to sanitize("&larr; Back to quotes"), electronics_path %>
+<%= link_to sanitize("&larr; Back to quotes"), electronics_path%>
 
   <div class="header">
     <h1>New Electronic</h1>
   </div>
 
-  <%= render "form", electronic: @electronic %>
+  <%= turbo_frame_tag "electronics_list" do %>
+    <%= render "form", electronic: @electronic %>
+  <% end %>
 </main>
