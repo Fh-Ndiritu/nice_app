@@ -32,7 +32,12 @@ class ElectronicsController < ApplicationController
 
     def destroy
         @electronic.destroy
-        redirect_to electronics_path, notice: "Electronics destroyed!"
+        
+
+        respond_to do |format|
+            format.html{ redirect_to electronics_path, notice: "Electronics destroyed!" }
+            format.turbo_stream
+        end
     end
 
     private 
