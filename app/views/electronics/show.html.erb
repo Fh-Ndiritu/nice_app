@@ -1,10 +1,12 @@
-<%= turbo_frame_tag @electronic do %>
+
   <main class="contents">
   <%= link_to sanitize("&larr; Back to Electronics"), electronics_path %>
   <div class="header">
+    <%= turbo_frame_tag @electronic do %>
     <h1>
       <%= @electronic.name %> sold at USD <%= @electronic.price %>
     </h1>
+    <% end %>
+
   </div>
 </main>
-<% end %>
