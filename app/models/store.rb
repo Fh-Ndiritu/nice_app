@@ -1,5 +1,5 @@
 class Store < ApplicationRecord
     validates :name, presence: true
-    has_many :users
-    has_many :electronics
+    has_many :users, dependent: :destroy
+    has_many :electronics, dependent: :destroy
 end

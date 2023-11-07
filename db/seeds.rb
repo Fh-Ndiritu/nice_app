@@ -7,7 +7,18 @@ require 'factory_bot'
 
 include FactoryBot::Syntax::Methods
 
+Rails.application.eager_load!
+ApplicationRecord.descendants.map(&:name).each{|model| model.constantize.destroy_all}
 
-3.times do 
-    create(:electronic)
+
+2.times do 
+    store = create(:store)
+    [1,2].sample.times do 
+        user = create(:user, store: store)
+        [1,2,3].sample.times do 
+            create(:electronic, store: store)
+        end
+    end
+
 end
+
