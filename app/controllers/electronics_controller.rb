@@ -12,7 +12,10 @@ class ElectronicsController < ApplicationController
     def create
         @electronic = Electronic.new(electronic_params)
         if @electronic.save
-            redirect_to electronics_path, notice: "Electronics created!"
+            respond_to do |format| 
+                format.html{ redirect_to electronics_path, notice: "Electronics created!"}
+                format.turbo_stream
+            end
         else
             render :new, status: :unprocessable_entity
         end

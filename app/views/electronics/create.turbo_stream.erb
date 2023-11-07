@@ -1,0 +1,2 @@
+<%= turbo_stream.prepend "electronics", partial: "electronics/electronic", locals: {electronic: @electronic} %>
+<%= turbo_stream.update Electronic.new, "" %>
