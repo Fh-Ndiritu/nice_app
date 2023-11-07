@@ -1,5 +1,6 @@
 class Electronic < ApplicationRecord
     validates :name, presence: true, length: {in: 4...70}
+    belongs_to :store
 
     default_scope { order(id: :desc)}
 

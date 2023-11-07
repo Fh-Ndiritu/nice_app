@@ -21,4 +21,12 @@ RSpec.describe Electronic, type: :model do
       expect(electronic.errors['name']).to include(/too long/)
     end
   end
+
+
+  describe 'it has associations' do 
+    it 'belongs to a company' do 
+      association = described_class.reflect_on_association(:store)
+      expect(association.macro).to eq(:belongs_to)
+    end
+  end
 end

@@ -23,7 +23,7 @@ RSpec.describe Post, type: :model do
     expect(subject).to_not be_valid
   end
 
-  context 'it has scoped', focus: do 
+  context 'it has scoped' do 
     it '.returns only active posts' do 
       subject = create(:post, user:user, active: true)
       subject2 = create(:post, user:user, active: false)

@@ -14,7 +14,7 @@ RSpec.describe Room, type: :model do
     end
   end
 
-  describe 'scopes', focus: do 
+  describe 'scopes' do 
     it 'has public scope' do 
       pri_room = create(:room, is_private: true)
       pub_room = create(:room, name: "Public")
