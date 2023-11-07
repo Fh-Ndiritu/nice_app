@@ -1,6 +1,8 @@
 <%= turbo_frame_tag electronic do %>
   <div class="electronic px-2 py-4">
-      <h3 class="text-green-500"><%= electronic.name %> at <%= electronic.price %></h3>
+      <%= link_to electronic_path(electronic) do %>
+       <h3 class="text-green-500"><%= electronic.name %> at <%= electronic.price %></h3>
+      <% end %>
       <div class="quote__actions flex">
               <%= link_to "Edit",
               edit_electronic_path(electronic),

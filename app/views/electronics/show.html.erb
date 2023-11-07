@@ -1,4 +1,5 @@
-<main class="contents">
+<%= turbo_frame_tag @electronic do %>
+  <main class="contents">
   <%= link_to sanitize("&larr; Back to Electronics"), electronics_path %>
   <div class="header">
     <h1>
@@ -6,3 +7,4 @@
     </h1>
   </div>
 </main>
+<% end %>
