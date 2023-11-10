@@ -1,16 +1,18 @@
 require 'rails_helper'
 
 RSpec.describe "cars/show", type: :view do
+  let(:user){create(:user)}
   before(:each) do
     assign(:car, Car.create!(
-      model: "Model",
+      car_model: "Model",
       brand: "Brand",
       power: 2,
       color: "Color",
       seat_capacity: 3,
       description: "MyText",
       price: 4,
-      location: "Location"
+      location: "Location",
+      user: user
     ))
   end
 

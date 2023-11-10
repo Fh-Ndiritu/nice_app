@@ -1,6 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe 'creating', type: :feature do
+    let(:store){create(:store)}
+    let(:user){create(:user, store: store)}
+    before do 
+        store
+        sign_in(user)
+    end
     
     describe 'adding a new electronic' do 
         it 'has electronics title' do 
@@ -20,15 +26,17 @@ RSpec.describe 'creating', type: :feature do
     end
 
     describe 'showing device cruds ' do 
+        let(:subject){create(:electronic, name: "Macbook M2", store: store)}
+        before do 
+            subject 
+        end
 
         it 'can show new electronic' do 
-            subject = create(:electronic, name: "Macbook M2")
             visit electronics_path
             expect(page).to have_content(subject.name)
         end
 
         it 'can update electronic' do 
-            subject = create(:electronic, name: "Macbook M2")
             visit electronics_path
             first(:link, "Edit").click
             fill_in "Name", with: "Edited Mac"
@@ -37,7 +45,6 @@ RSpec.describe 'creating', type: :feature do
         end
 
         it 'can be destroyed' do 
-            subject = create(:electronic, name: "Macbook M2")
             visit electronics_path
             first(:button, "Delete").click
             expect(page).to_not have_content(subject.name)

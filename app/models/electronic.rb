@@ -10,6 +10,6 @@ class Electronic < ApplicationRecord
     # after_update_commit ->{broadcast_update_later_to "electronics"}
     # after_destroy_commit ->{broadcast_remove_to "electronics"}
 
-    broadcasts_to ->(electronic){"electronics"}, inserts_by: :prepend
+    broadcasts_to ->(electronic){[electronic.store, "electronics"]}, inserts_by: :prepend
 
 end

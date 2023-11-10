@@ -1,7 +1,7 @@
 class ElectronicsController < ApplicationController
     before_action :set_electronic, only: [:update, :destroy, :show, :edit]
     def index
-        @electronics = Electronic.all
+        @electronics = current_store.electronics
     end
 
     def new 
@@ -10,7 +10,7 @@ class ElectronicsController < ApplicationController
 
     
     def create
-        @electronic = Electronic.new(electronic_params)
+        @electronic = current_store.electronics.build(electronic_params)
         if @electronic.save
             respond_to do |format| 
                 format.html{ redirect_to electronics_path, notice: "Electronics created!"}
@@ -46,7 +46,7 @@ class ElectronicsController < ApplicationController
     private 
 
     def set_electronic
-        @electronic = Electronic.find(params[:id])
+        @electronic = current_store.electronics.find(params[:id])
     end
 
     def electronic_params

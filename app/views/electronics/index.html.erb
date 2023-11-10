@@ -1,7 +1,7 @@
-<%= turbo_stream_from "electronics" %>
+<%= turbo_stream_from current_store, "electronics" %>
 <main class="content w-full">
 <div class="header flex justify-between w-full">
-    <h1 class="text-4xl">Shop for Electronics</h1>
+    <h1 class="text-4xl">Shop for Electronics at <%= current_store.name %></h1>
     <%= link_to "New Electronic", 
     new_electronic_path, 
     data: {turbo_frame: dom_id(Electronic.new)},
