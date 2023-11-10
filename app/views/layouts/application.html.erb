@@ -13,8 +13,8 @@
 
   <body>
     <main class="container mx-auto mt-28 px-5 d-block">
-    <div class="flash_wrap">
-      <%= render "flash" %>
+    <div class="flash_wrap" id ="flashes">
+      <%= render "layouts/flash" %>
     </div>
     <% if user_signed_in? %>
          <div>

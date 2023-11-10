@@ -14,7 +14,7 @@ class ElectronicsController < ApplicationController
         if @electronic.save
             respond_to do |format| 
                 format.html{ redirect_to electronics_path, notice: "Electronics created!"}
-                format.turbo_stream
+                format.turbo_stream{ flash.now[:notice] = "Electronics created!"}
             end
         else
             render :new, status: :unprocessable_entity
@@ -27,7 +27,10 @@ class ElectronicsController < ApplicationController
 
     def update 
         if @electronic.update(electronic_params)
-            redirect_to electronics_path, notice: "Electronics updated!"
+            respond_to do |format|
+                format.html{ redirect_to electronics_path, notice: "Electronics updated!"}
+                format.turbo_stream{ flash.now[:notice] = "Electronics updated!"}
+            end
         else
             render :edit, status: :unprocessable_entity
         end
@@ -39,7 +42,7 @@ class ElectronicsController < ApplicationController
 
         respond_to do |format|
             format.html{ redirect_to electronics_path, notice: "Electronics destroyed!" }
-            format.turbo_stream
+            format.turbo_stream{ flash.now[:notice] = "Electronics destroyed!" }
         end
     end
 

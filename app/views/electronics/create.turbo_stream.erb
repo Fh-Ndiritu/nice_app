@@ -9,3 +9,4 @@
 <%= turbo_stream.prepend "electronics", @electronic %>
 
 <%= turbo_stream.update Electronic.new, "" %>
+<%= turbo_stream.prepend "flashes", partial: "layouts/flash" %>

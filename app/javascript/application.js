@@ -2,6 +2,6 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 
-import {turbo} from "@hotwired/turbo-rails"
+// import {turbo} from "@hotwired/turbo-rails"
 
-turbo.session.drive = true
+// turbo.session.drive = true
