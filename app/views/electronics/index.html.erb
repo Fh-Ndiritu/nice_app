@@ -10,7 +10,9 @@
 </div>
 
 <%= turbo_frame_tag Electronic.new %>
+
 <%= turbo_frame_tag "electronics" do %>
+    <%= render "empty_state" %>
     <%= render @electronics %>
 <% end %>
 </main>
