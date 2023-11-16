@@ -1,5 +1,14 @@
 <%= turbo_stream_from current_store, "electronics" %>
-<main class="content w-full">
+<main class="content w-full" data-controller="dropdown">
+
+<div data-controller="hello" data-hello-name="Fh">
+    <input data-hello-target="name" type="text" data-action="paste->hello#paste">
+    <button data-action="click->hello#log_me">Log Now</button>
+</div>
+
+
+
+
 <div class="header flex justify-between w-full">
     <h1 class="text-4xl">Shop for Electronics at <%= current_store.name %></h1>
     <%= link_to "New Electronic", 
