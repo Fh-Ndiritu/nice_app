@@ -8,9 +8,9 @@
 </div>
 
 
-<div class="d-block my-6" data-controller="clipboard">
-    <input data-clipboard-target="source" type="text" value="Swimming with FH" readonly>
-    <button data-action="click->clipboard#copy">Copy Text</button>
+<div data-controller="clipboard" data-clipboard-supported-class="clipboard--supported" >
+    <input data-clipboard-target="source" type="text" value="Diving with FH" readonly>
+    <button class="clipboard-button"  data-action="click->clipboard#copy">Copy Text</button>
 </div>
 
 <div data-controller="hello" data-hello-name="Fh">
