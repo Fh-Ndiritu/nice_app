@@ -2,7 +2,7 @@
 <main class="content w-full my-11">
 
 
-<div class="d-block my-6" data-controller="clipboard">
+<%# <div class="d-block my-6" data-controller="clipboard">
     <input data-clipboard-target="source" type="text" value="Sharking with FH" readonly>
     <button data-action="click->clipboard#copy">Copy Text</button>
 </div>
@@ -16,7 +16,7 @@
 <div data-controller="hello" data-hello-name="Fh">
     <input data-hello-target="name" type="text" data-action="change->hello#type" data-action="paste->hello#paste">
     <button data-action="click->hello#log_me">Log Now</button>
-</div>
+</div> %>
 
 
 
@@ -36,4 +36,22 @@
     <%= render "empty_state" %>
     <%= render @electronics %>
 <% end %>
+
+
+
+<h2 class="text-4xl font-bold text-blue-500 w-full my-6 mt-11 flex justify-center">The slide store!!
+</h2>
+
+<div data-controller="slideshow" data-slideshow-index-value="2">
+    <div data-slideshow-target="slide">Lorem</div>
+    <div data-slideshow-target="slide">Ipsum</div>
+    <div data-slideshow-target="slide">Dor si</div>
+    <div data-slideshow-target="slide">...met</div>
+
+    <button data-action="slideshow#previous"> ← </button>
+    <button data-action="slideshow#next"> → </button>
+</div>
+
+
+
 </main>
