@@ -5,6 +5,10 @@ class CarsController < ApplicationController
   # GET /cars or /cars.json
   def index
     @cars = Car.all
+    respond_to do |format|
+      # format.html{}
+      format.json{ render cars: @cars}
+    end
   end
 
   # GET /cars/1 or /cars/1.json

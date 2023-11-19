@@ -5,6 +5,10 @@ class PostsController < ApplicationController
   # GET /posts or /posts.json
   def index
     @posts = Post.all
+
+    respond_to do |format|
+      format.json{ render posts: @posts}
+    end
   end
 
   # GET /posts/1 or /posts/1.json

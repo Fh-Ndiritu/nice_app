@@ -5,7 +5,7 @@ export default class extends Controller {
   static values = { url: String, refreshInterval: Number}
 
   connect() {
-    this.load()
+    this.load({})
     if(this.hasRefreshIntervalValue){
       this.startRefreshing()
     }
@@ -15,15 +15,25 @@ export default class extends Controller {
     this.stopRefreshing()
   }
 
-  load(){
-    fetch(this.urlValue)
+  load({params}){
+    let url = ""
+    if(params === undefined){
+      url = this.urlValue
+    }else{
+      url = params.url
+    }
+
+    fetch(url)
     .then(response => response.text())
-    .then(html => this.element.innerHTML = html)
+    .then((html) => {
+      this.element.querySelector(".text-wrapper").innerHTML = html
+    })
+    
   }
 
   startRefreshing(){
     this.refreshTimer = setInterval(()=>{
-      this.load()
+      this.load({})
      }, this.refreshIntervalValue)
   }
 
