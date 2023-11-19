@@ -13,7 +13,12 @@ export default class extends Controller {
 
   paste(event){
     event.preventDefault()
-    alert("pasting not allowed")
+    alert("pasting doihksh ")
+  }
+
+  type(){
+    console.log("typing")
+    console.log(this.nameElement.value)
   }
 
   get name(){
@@ -27,4 +32,5 @@ export default class extends Controller {
   get nameElement(){
     return this.targets.find("name")
   }
+
 }

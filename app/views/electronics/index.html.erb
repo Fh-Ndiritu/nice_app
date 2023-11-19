@@ -1,8 +1,20 @@
 <%= turbo_stream_from current_store, "electronics" %>
-<main class="content w-full" data-controller="dropdown">
+<main class="content w-full my-11">
+
+
+<div class="d-block my-6" data-controller="clipboard">
+    <input data-clipboard-target="source" type="text" value="Sharking with FH" readonly>
+    <button data-action="click->clipboard#copy">Copy Text</button>
+</div>
+
+
+<div class="d-block my-6" data-controller="clipboard">
+    <input data-clipboard-target="source" type="text" value="Swimming with FH" readonly>
+    <button data-action="click->clipboard#copy">Copy Text</button>
+</div>
 
 <div data-controller="hello" data-hello-name="Fh">
-    <input data-hello-target="name" type="text" data-action="paste->hello#paste">
+    <input data-hello-target="name" type="text" data-action="change->hello#type" data-action="paste->hello#paste">
     <button data-action="click->hello#log_me">Log Now</button>
 </div>
 
